@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const Garden = () => {
+const HarvestContainer = () => {
     const location = useLocation()
 
     return(
@@ -11,4 +11,4 @@ const Garden = () => {
     )
 }
 
-export default Garden
+export default HarvestContainer
