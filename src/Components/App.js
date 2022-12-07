@@ -9,6 +9,8 @@ import CropContainer from "./CropContainer"
 import HarvestContainer from "./HarvestContainer"
 
 
+const firstEndPoint = "http://localhost:9292/gardens"
+
 function App() {
 
   return (
