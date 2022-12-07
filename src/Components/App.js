@@ -5,7 +5,7 @@ import '../Stylesheets/App.css';
 import GardenerLogin from "./GardenerLogin"
 import SeasonsCarousel from "./SeasonsCarousel"
 import Garden from "./SeasonsCarousel"
-import ProduceContainer from "./ProduceContainer"
+import CropContainer from "./CropContainer"
 import HarvestContainer from "./HarvestContainer"
 
 
@@ -39,9 +39,9 @@ function App() {
         }>
         </Route>
         <Route 
-        path='/produce'
+        path='/crop'
         element={
-          <ProduceContainer/>
+          <CropContainer/>
         }>
         </Route>
         <Route 
