@@ -9,17 +9,9 @@ import CropContainer from "./CropContainer"
 import HarvestContainer from "./HarvestContainer"
 
 
-
 const firstEndPoint = "http://localhost:9292/gardens"
 
 function App() {
-  
-  useEffect(() =>  {
-   fetch(firstEndPoint)
-   .then((response) => response.json())
-   .then((data) => console.log(data))
-  },
-  [])
 
   return (
     <div>
@@ -39,7 +31,7 @@ function App() {
         }>
         </Route>
         <Route 
-        path='/crop'
+        path='/crops'
         element={
           <CropContainer/>
         }>
