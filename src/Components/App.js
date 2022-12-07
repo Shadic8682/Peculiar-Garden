@@ -5,21 +5,11 @@ import '../Stylesheets/App.css';
 import GardenerLogin from "./GardenerLogin"
 import SeasonsCarousel from "./SeasonsCarousel"
 import Garden from "./SeasonsCarousel"
-import ProduceContainer from "./ProduceContainer"
+import CropContainer from "./CropContainer"
 import HarvestContainer from "./HarvestContainer"
 
 
-
-const firstEndPoint = "http://localhost:9292/"
-
 function App() {
-  
-  useEffect(() =>  {
-   fetch(firstEndPoint)
-   .then((response) => response.json())
-   .then((data) => console.log(data))
-  },
-  [])
 
   return (
     <div>
@@ -39,9 +29,9 @@ function App() {
         }>
         </Route>
         <Route 
-        path='/produce'
+        path='/crops'
         element={
-          <ProduceContainer/>
+          <CropContainer/>
         }>
         </Route>
         <Route 
