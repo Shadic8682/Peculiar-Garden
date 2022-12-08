@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react"
 import Season from "./Season"
 
-const SeasonsCarousel = () => {
+const SeasonsCarousel = ({setGarden}) => {
     const location = useLocation()
     const [seasons, setSeasons] = useState([])
 
