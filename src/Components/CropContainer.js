@@ -47,7 +47,7 @@ const CropContainer = ({ currentGarden }) => {
 
   return (
     <div>
-      <h1 className="cropsPageHeader">You're on {location.pathname}!</h1>
+      <h1 className="crops-page-header">You're on {location.pathname}!</h1>
       {renderCrops}
       <button className="plant-crops" onClick={assignCrops}>Plant Crops</button>
     </div>

@@ -21,9 +21,8 @@ function Crop({ id, cropName, season, description, growth_time, plantedCropIDs, 
       <h4>{growth_time}</h4>
       <img
         src="https://previews.123rf.com/images/dreamcreation01/dreamcreation011609/dreamcreation01160900211/63269274-vector-illustration-of-cartoon-vegetable-garden-farm-background.jpg"
-        alt="some_name" className="imageSize"
+        alt="some_name" className="image-size"
       />
-      image
     </div>
   );
 }
