@@ -1,14 +1,15 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {Routes, Route, useNavigate, useLocation} from "react-router-dom"
 // import logo from '../Assets/Logos/logo.svg';
 import '../Stylesheets/App.css';
 import GardenerLogin from "./GardenerLogin"
 import SeasonsCarousel from "./SeasonsCarousel"
-import Garden from "./SeasonsCarousel"
+import Garden from "./Garden"
 import CropContainer from "./CropContainer"
 import HarvestContainer from "./HarvestContainer"
 
 function App() {
+  const [currentGarden, setGarden] = useState(10)
 
   return (
     <div>
@@ -24,19 +25,19 @@ function App() {
         <Route 
         path='/season'
         element={
-          <SeasonsCarousel/>
+          <SeasonsCarousel setGarden={setGarden}/>
         }>
         </Route>
         <Route 
         path='/crops'
         element={
-          <CropContainer/>
+          <CropContainer currentGarden={currentGarden}/>
         }>
         </Route>
         <Route 
         path='/garden'
         element={
-          <Garden/>
+          <Garden currentGarden={currentGarden}/>
         }>
           <Route path='/garden/harvest' element={<HarvestContainer/>}/>
         </Route>
