@@ -19,7 +19,7 @@ const SeasonsCarousel = ({setGarden}) => {
 
 
     return(
-    <div>
+    <div className="seasonContainer">
         <h1>You're on {location.pathname}!</h1>
         {seasonCollection}
     </div>

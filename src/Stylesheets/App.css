@@ -37,37 +37,34 @@
     }
   }
 
-  /* ---------------------------------------------------------- */
+  /* Crops Cards---------------------------------------------------------- */
 
   .cropsPageHeader {
     text-align: center;
     color: black;
   }
 
-  .cropDiv {
+  .crop-wrapper {
+    
     text-align: center;
     color: black;
     margin: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    margin-right: 5rem;
     min-width: 30%;
     max-width: 30%;
-    margin-bottom: 1em;
-    flex-grow: 1;
-  
+ 
     border-radius: 10px;
     background: white;
     box-shadow: -.5rem 0 1rem #000;
     padding: 2px 16px;
-    transition: 0.1s;
-    height: 100%;
+    display: inline-block; 
+ 
   }
 
   .imageSize {
-    display: block;
-  
+
     height: 18rem;
     object-fit: cover;
     text-align: center;
@@ -76,5 +73,83 @@
     margin: auto;
     max-width: 90%;
     margin-bottom: 8px;
+
+  }
+
+  .plant-crops {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+  }
+
+
+
+  /* Login Form____________________________________________ */
+
+  #login {
+
+    text-align: center;
+    color: black;
+    
+    width: 90%;
+    box-shadow: -.5rem 0 1rem #000;
+    margin-left: 5%;
+    margin-top: 10%; 
+
+    line-height: 100px;
+    font-size: 1rem;
+
+  }
+
+  /* Season Page____________________________________________ */
+
+  .seasonContainer {
+
+    text-align: center;
+    color: black;
+
+    max-width: 30%;
+    border-radius: 10px;
+    background: white;
+    box-shadow: -.5rem 0 1rem #000;
+
+    line-height: 100px;
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px;
+    margin-top: 10%; 
+
+  }
+
+  /* Garden Page____________________________________________ */
+
+  .container {
+    text-align: center;
+    color: black;
+
+    max-width: 30%;
+    border-radius: 10px;
+    background: white;
+    box-shadow: -.5rem 0 1rem #000;
+
+    line-height: 100px;
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px;
+    margin-top: 10%; 
+  }
+
+  .harvest-crop {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+  }
+
+  .delete-crop {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+  }
+
+  .switch-season {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
   }
 
