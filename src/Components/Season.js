@@ -2,10 +2,10 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 
-const Season = ({key, season, crops, seasonChange}) => {
+const Season = ({id, season, crops, seasonChange}) => {
 
     const handleClick = () => {
-        seasonChange(key)
+        seasonChange(id)
     }
 
     return (

@@ -7,7 +7,7 @@ const SeasonsCarousel = ({setGarden}) => {
     const location = useLocation()
     const [seasons, setSeasons] = useState([])
 
-    const seasonCollection = seasons.map(seaObj => <Season key={seaObj.id} season={seaObj.season} crops={seaObj.crops} seasonChange={setSeasons}/>)
+    const seasonCollection = seasons.map(seaObj => <Season key={seaObj.id} id={seaObj.id} season={seaObj.season} crops={seaObj.crops} seasonChange={setGarden}/>)
 
     
 
@@ -16,8 +16,6 @@ const SeasonsCarousel = ({setGarden}) => {
         .then(response => response.json())
         .then(data => setSeasons(data))
     }, [])
-
-    console.log(seasons)
 
 
     return(

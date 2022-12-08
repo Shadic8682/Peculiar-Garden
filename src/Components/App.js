@@ -11,6 +11,8 @@ import HarvestContainer from "./HarvestContainer"
 function App() {
   const [currentGarden, setGarden] = useState(10)
 
+  console.log(currentGarden)
+
   return (
     <div>
       <header>
