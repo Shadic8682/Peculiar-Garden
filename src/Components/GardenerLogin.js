@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const GardenerLogin = () => {
+const GardenerLogin = ({setName}) => {
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -21,6 +21,7 @@ const GardenerLogin = () => {
                     name: nameInput,}
                 )}
                 )
+        setName(nameInput)        
         navigate('/season')
     }
 
