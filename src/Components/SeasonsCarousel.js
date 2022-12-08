@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react"
 import Season from "./Season"
 
-const SeasonsCarousel = ({ setCurrentGarden }) => {
+const SeasonsCarousel = ({ setCurrentGarden, gardenerName }) => {
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -23,11 +23,17 @@ const SeasonsCarousel = ({ setCurrentGarden }) => {
         navigate('/crops')
     }
 
+    const welcome = `Hey, ${gardenerName} what season are you in?`
+
     return (
-        <div className="seasonContainer">
+      
+    
+        <div className="season-container">
+            <h1>{welcome}</h1>
             {seasonCollection}
-            <button onClick={handleClick}>Select Your Crops</button>
+            <button className="select-crops" onClick={handleClick}>Select Your Crops</button>
         </div>
+       
 
     )
 }

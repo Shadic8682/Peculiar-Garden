@@ -9,7 +9,8 @@ import CropContainer from "./CropContainer"
 import HarvestContainer from "./HarvestContainer"
 
 function App() {
-  const [currentGarden, setCurrentGarden] = useState()
+  const [currentGarden, setCurrentGarden] = useState(10)
+  const [gardenerName, setGardenerName] = useState("")
 
   console.log(currentGarden)
 
@@ -19,15 +20,15 @@ function App() {
       </header>
       <Routes>
         <Route 
-        path='/login'
+        path='/'
         element={
-          <GardenerLogin/>
+          <GardenerLogin setName={setGardenerName}/>
         }>
         </Route>
         <Route 
         path='/season'
         element={
-          <SeasonsCarousel setCurrentGarden={setCurrentGarden}/>
+          <SeasonsCarousel gardenerName={gardenerName} currentGarden={currentGarden} setCurrentGarden={setCurrentGarden}/>
         }>
         </Route>
         <Route 
