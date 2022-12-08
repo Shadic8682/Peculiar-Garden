@@ -20,7 +20,7 @@ function App() {
       </header>
       <Routes>
         <Route 
-        path='/login'
+        path='/'
         element={
           <GardenerLogin setName={setGardenerName}/>
         }>
