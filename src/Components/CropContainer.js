@@ -20,6 +20,7 @@ const CropContainer = ({ currentGarden }) => {
   }
 
   function assignCrops() {
+    console.log(plantedCropIDs)
     navigate('/garden')
     plantedCropIDs.map((cropID) => {
       fetch(`http://localhost:9292/crops/${cropID}`, {
@@ -28,8 +29,8 @@ const CropContainer = ({ currentGarden }) => {
         body: JSON.stringify({ garden_id: currentGarden.id }),
       });
     })
-    console.log(plantedCropIDs)
   }
+
 
   const renderCrops = [...crops].filter((crop) => crop.season === currentGarden.season).map((eachCrop) => {
     return (
