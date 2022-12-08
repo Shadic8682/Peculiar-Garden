@@ -22,13 +22,13 @@ const Garden = ({ currentGarden }) => {
         <div className="container">
             <header>Hi!</header>
             <div id="garden-container">
-                <button>Harvest Crop</button>
+                <button className="harvest-crop">Harvest Crop</button>
                 <div id="garden-plot">
                     {plantedCrops}
                 </div>
-                <button>Delete Crop</button>
+                <button className="delete-crop">Delete Crop</button>
             </div>
-            <button>Switch Seasons</button>
+            <button className="switch-season">Switch Seasons</button>
         </div>
     )
 }

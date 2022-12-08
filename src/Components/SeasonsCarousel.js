@@ -24,10 +24,11 @@ const SeasonsCarousel = ({ setCurrentGarden }) => {
     }
 
     return (
-        <div>
+        <div className="seasonContainer">
             {seasonCollection}
             <button onClick={handleClick}>Select Your Crops</button>
         </div>
+
     )
 }
 
