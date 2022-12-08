@@ -7,7 +7,7 @@ const Garden = ({ currentGarden }) => {
     const [selectedCrops, setSelectedCrops] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:9292/gardens/${currentGarden}`)
+        fetch(`http://localhost:9292/gardens/${currentGarden.id}`)
             .then(response => response.json())
             .then(garden => setSelectedCrops(garden.crops))
     }, [])

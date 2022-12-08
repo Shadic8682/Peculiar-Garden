@@ -2,15 +2,14 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 
-const Season = ({id, season, crops, seasonChange}) => {
-
+const Season = ({ seasonChange, seaObj}) => {
     const handleClick = () => {
-        seasonChange(id)
+        seasonChange(seaObj)
     }
 
     return (
         <div onClick={handleClick}>
-            <h1>{season}</h1>
+            <h1>{seaObj.season}</h1>
         </div>    
 )}
 
