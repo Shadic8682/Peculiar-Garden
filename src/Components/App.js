@@ -9,7 +9,7 @@ import CropContainer from "./CropContainer"
 import HarvestContainer from "./HarvestContainer"
 
 function App() {
-  const [currentGarden, setGarden] = useState(10)
+  const [currentGarden, setCurrentGarden] = useState({})
 
   return (
     <div>
@@ -25,7 +25,7 @@ function App() {
         <Route 
         path='/season'
         element={
-          <SeasonsCarousel setGarden={setGarden}/>
+          <SeasonsCarousel setCurrentGarden={setCurrentGarden}/>
         }>
         </Route>
         <Route 

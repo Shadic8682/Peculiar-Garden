@@ -31,7 +31,7 @@ const CropContainer = ({ currentGarden }) => {
     console.log(plantedCropIDs)
   }
 
-  const renderCrops = crops.map((eachCrop) => {
+  const renderCrops = [...crops].filter((crop) => crop.season === 'spring').map((eachCrop) => {
     return (
       <Crop
         id={eachCrop.id}
