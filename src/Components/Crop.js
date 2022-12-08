@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Crop({ id, cropName, season, description, growth_time, plantedCropIDs, setPlantedCropIDs }) {
   const [isSelected, setSelected] = useState(false)
-
+  console.log("hello")
   function clickHandler() {
     if (!isSelected) {
       setPlantedCropIDs([...plantedCropIDs, id])
@@ -21,7 +21,7 @@ function Crop({ id, cropName, season, description, growth_time, plantedCropIDs, 
       <h4>{growth_time}</h4>
       <img
         src="https://previews.123rf.com/images/dreamcreation01/dreamcreation011609/dreamcreation01160900211/63269274-vector-illustration-of-cartoon-vegetable-garden-farm-background.jpg"
-        alt="some_name" className="imageSize"
+        alt="some_name" className="image-size"
       />
       image
     </div>
@@ -29,3 +29,4 @@ function Crop({ id, cropName, season, description, growth_time, plantedCropIDs, 
 }
 
 export default Crop;
+
