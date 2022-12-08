@@ -25,13 +25,13 @@ const CropContainer = ({ currentGarden }) => {
       fetch(`http://localhost:9292/crops/${cropID}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ garden_id: currentGarden }),
+        body: JSON.stringify({ garden_id: currentGarden.id }),
       });
     })
     console.log(plantedCropIDs)
   }
 
-  const renderCrops = [...crops].filter((crop) => crop.season === 'spring').map((eachCrop) => {
+  const renderCrops = [...crops].filter((crop) => crop.season === currentGarden.season).map((eachCrop) => {
     return (
       <Crop
         id={eachCrop.id}

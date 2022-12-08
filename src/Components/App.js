@@ -9,7 +9,7 @@ import CropContainer from "./CropContainer"
 import HarvestContainer from "./HarvestContainer"
 
 function App() {
-  const [currentGarden, setCurrentGarden] = useState({})
+  const [currentGarden, setCurrentGarden] = useState()
 
   console.log(currentGarden)
 

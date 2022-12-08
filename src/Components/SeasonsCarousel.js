@@ -3,26 +3,32 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react"
 import Season from "./Season"
 
-const SeasonsCarousel = ({setGarden}) => {
+const SeasonsCarousel = ({ setCurrentGarden }) => {
     const location = useLocation()
+    const navigate = useNavigate()
+
     const [seasons, setSeasons] = useState([])
 
-    const seasonCollection = seasons.map(seaObj => <Season key={seaObj.id} id={seaObj.id} season={seaObj.season} crops={seaObj.crops} seasonChange={setGarden}/>)
-
-    
+    const seasonCollection = seasons.map(seaObj => <Season key={seaObj.id} seaObj={seaObj} seasonChange={setCurrentGarden} />)
 
     useEffect(() => {
-        fetch("http://localhost:9292/gardens")
-        .then(response => response.json())
-        .then(data => setSeasons(data))
+        setTimeout(() => {
+            fetch("http://localhost:9292/gardens")
+                .then(response => response.json())
+                .then(data => setSeasons(data))
+        }, 1);
     }, [])
 
+    const handleClick = () => {
+        navigate('/crops')
+    }
 
-    return(
-    <div className="seasonContainer">
-        <h1>You're on {location.pathname}!</h1>
-        {seasonCollection}
-    </div>
+    return (
+        <div className="seasonContainer">
+            {seasonCollection}
+            <button onClick={handleClick}>Select Your Crops</button>
+        </div>
+
     )
 }
 
