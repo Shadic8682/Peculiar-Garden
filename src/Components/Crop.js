@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 function Crop({ id, cropName, season, description, growth_time, plantedCropIDs, setPlantedCropIDs }) {
   const [isSelected, setSelected] = useState(false)
-  console.log("hello")
   function clickHandler() {
+    console.log('clicked')
     if (!isSelected) {
       setPlantedCropIDs([...plantedCropIDs, id])
     } else {
@@ -14,16 +14,15 @@ function Crop({ id, cropName, season, description, growth_time, plantedCropIDs, 
   }
 
   return (
-    <div className="crop-wrapper" onClick={clickHandler}>
+    <div className={!isSelected ? "crop-wrapper" : "crop-wrapper selected"} onClick={clickHandler}>
       <h1>{cropName}</h1>
-      <h3>{season}</h3>
+      {/* <h3>{season}</h3> */}
       <p>{description}</p>
-      <h4>{growth_time}</h4>
+      <h4>Time to Grow: {growth_time} Weeks</h4>
       <img
         src="https://previews.123rf.com/images/dreamcreation01/dreamcreation011609/dreamcreation01160900211/63269274-vector-illustration-of-cartoon-vegetable-garden-farm-background.jpg"
         alt="some_name" className="image-size"
       />
-      image
     </div>
   );
 }

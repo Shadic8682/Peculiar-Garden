@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Crop from "./Crop"
+import HarvestContainer from "./HarvestContainer";
 
 const Garden = ({ currentGarden }) => {
     const location = useLocation()
     const [selectedCrops, setSelectedCrops] = useState([])
+    const [harvestedCrops, setHarvestedCrops] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:9292/gardens/${currentGarden.id}`)
@@ -19,16 +21,16 @@ const Garden = ({ currentGarden }) => {
     })
 
     return (
-        <div className="container">
-            <header>Hi!</header>
+        <div id="garden-screen">
             <div id="garden-container">
-                <button className="harvest-crop">Harvest Crop</button>
+                <button className="button-1">Harvest Crop</button>
                 <div id="garden-plot">
                     {plantedCrops}
                 </div>
-                <button className="delete-crop">Delete Crop</button>
+                <button className="button-1">Delete Crop</button>
             </div>
-            <button className="switch-season">Switch Seasons</button>
+            <button className="button-1">Switch Seasons</button>
+            <HarvestContainer/>
         </div>
     )
 }

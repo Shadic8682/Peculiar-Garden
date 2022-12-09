@@ -7,6 +7,9 @@ import SeasonsCarousel from "./SeasonsCarousel"
 import Garden from "./Garden"
 import CropContainer from "./CropContainer"
 import HarvestContainer from "./HarvestContainer"
+import springImg from "../Assets/Images/spring.jpg"
+import summerImg from "../Assets/Images/summer.jpg"
+import fallImg from "../Assets/Images/fall.jpeg"
 
 function App() {
   const [currentGarden, setCurrentGarden] = useState(10)
@@ -15,7 +18,7 @@ function App() {
   console.log(currentGarden)
 
   return (
-    <div>
+    <div id="app-container">
       <header>
       </header>
       <Routes>
@@ -46,6 +49,11 @@ function App() {
         </Route>
       </Routes>
       <footer></footer>
+      <div id="background-container">
+        <img id="spring-bg" className="season-bg" src={springImg} ></img>
+        <img id="summer-bg" src={summerImg}></img>
+        <img id="fall-bg" src={fallImg}></img>
+      </div>
     </div>
   );
 }

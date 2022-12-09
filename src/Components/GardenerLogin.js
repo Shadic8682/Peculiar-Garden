@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const GardenerLogin = ({setName}) => {
+const GardenerLogin = ({ setName }) => {
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -13,28 +13,32 @@ const GardenerLogin = ({setName}) => {
 
     const handleLogin = (e) => {
         e.preventDefault()
-        fetch('http://localhost:9292/gardeners', 
+        fetch('http://localhost:9292/gardeners',
             {
                 method: 'PUT',
-                headers: {'Content-Type': 'application/json'},
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    name: nameInput,}
-                )}
+                    name: nameInput,
+                }
                 )
-        setName(nameInput)        
+            }
+        )
+        setName(nameInput)
         navigate('/season')
     }
 
-    return(
-    <div>
-        <div id="login">
-            <h1>Your Peculiar Garden</h1>
-            <form onSubmit={handleLogin}>
-                <input onChange={handleInput} type="text" name="name" value={nameInput}/>
-                <input type="submit" name="login"/>
-            </form>
+    return (
+        <div id="login-screen">
+            <div className="container">
+                <div id="login">
+                    <h1>Your Peculiar Garden</h1>
+                    <form onSubmit={handleLogin}>
+                        <input className="text-input" placeholder="Enter Name" onChange={handleInput} type="text" name="name" value={nameInput} />
+                        <input className="button-1" type="submit" name="login" />
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
     )
 }
 

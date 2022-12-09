@@ -47,10 +47,12 @@ const CropContainer = ({ currentGarden }) => {
   });
 
   return (
-    <div>
-      <h1 className="crops-page-header">You're on {location.pathname}!</h1>
-      {renderCrops}
-      <button className="plant-crops" onClick={assignCrops}>Plant Crops</button>
+    <div id="crops-screen">
+      <h1 className="page-header">PICK CROPS TO PLANT!</h1>
+      <div className="crop-container">
+        {renderCrops}
+      </div>
+      <button className="button-1" onClick={assignCrops}>Plant Crops</button>
     </div>
   );
 };

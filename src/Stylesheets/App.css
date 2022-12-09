@@ -1,167 +1,255 @@
-.App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  /* Crops Cards---------------------------------------------------------- */
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  .crops-page-header {
-    text-align: center;
-    color: black;
-  }
-
-  .crop-wrapper {
-    
-    text-align: center;
-    color: black;
-    margin: 2rem;
-    margin-bottom: 2rem;
-
-    margin-right: 5rem;
-    min-width: 30%;
-    max-width: 30%;
- 
-    border-radius: 10px;
-    background: white;
-    box-shadow: -.5rem 0 1rem #000;
-    padding: 2px 16px;
-    display: inline-block; 
- 
-  }
-
-  .image-size {
-
-    height: 18rem;
-    object-fit: cover;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    max-width: 90%;
-    margin-bottom: 8px;
-
-  }
-
-  .plant-crops {
-    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-  }
+#app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
-  /* Login Form____________________________________________ */
+/* Crops Cards---------------------------------------------------------- */
+#crops-screen, #login-screen, #garden-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  #login {
+.crop-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(auto-fill, auto);
+  width: auto;
+  height: 650px;
+  overflow-y: scroll;
+}
 
-    text-align: center;
-    color: black;
-    
-    width: 90%;
-    box-shadow: -.5rem 0 1rem #000;
-    margin-left: 5%;
-    margin-top: 10%; 
+.page-header {
+  text-align: center;
+  font-family: 'Freshfruit';
+  color: black;
+}
 
-    line-height: 100px;
-    font-size: 1rem;
+.crop-wrapper {
+  text-align: center;
+  margin: 2rem;
+  font-family: 'Mukta';
 
-  }
+  /* min-width: 30%; */
+  width: 250px;
+  max-width: 300px;
 
-  /* Season Page____________________________________________ */
+  border-radius: 10px;
+  background: white;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+  padding: 2px 16px;
+  display: inline-block;
+  transition: all .2s;
+  user-select: none;
+  cursor: pointer;
+}
 
-  .season-container {
+.crop-wrapper:hover {
+  box-shadow: 7.5px 7.5px 30px rgba(0, 0, 0, 0.5)  ; 
+	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+}
 
-    text-align: center;
-    color: black;
+.crop-wrapper.selected {
+  background: aquamarine;
+}
 
-    max-width: 30%;
-    border-radius: 10px;
-    background: white;
-    box-shadow: -.5rem 0 1rem #000;
+.crop-wrapper p {
+  height: 100px;
+  overflow-y: scroll;
+}
 
-    line-height: 100px;
-    margin: 0 auto; 
-    float: none; 
-    margin-bottom: 10px;
-    margin-top: 10%; 
+.image-size {
+  height: 18rem;
+  object-fit: cover;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 90%;
+  margin-bottom: 8px;
+}
 
-  }
+.button-1 {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+    rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transition: all .2s;
+  transform: scale(1) rotate(0deg);
+  font-family: 'Mukta';
+  user-select: none;
+  cursor: pointer;
+  min-width: 100px;
+  height: 25px;
+  text-align: center;
+  font-size: 15px;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
 
-  .question {
+.button-1:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
 
-    text-align: center;
-    color: black;
-    margin-top: 10%;
-  }
+/* Login Form____________________________________________ */
 
-  .select-crops {
-    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-  }
+#login {
+  text-align: center;
+  width: 90%;
+  font-size: 1rem;
+}
 
-  /* Garden Page____________________________________________ */
+#login h1 {
+  font-family: 'Freshfruit';
+  font-size: 3em;
+  color: orangered;
+}
 
-  .container {
-    text-align: center;
-    color: black;
+#login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    max-width: 30%;
-    border-radius: 10px;
-    background: white;
-    box-shadow: -.5rem 0 1rem #000;
+#login form > .text-input {
+  width: 250px;
+  height: 35px;
+  text-align: center;
+  font-family: 'Mukta';
+  font-size: 20px;
+  border: none;
+  background-color: white;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1) inset; 
+	-webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1) inset; 
+	-moz-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1) inset; 
+  margin-bottom: 10px;
+}
 
-    line-height: 100px;
-    margin: 0 auto; 
-    float: none; 
-    margin-bottom: 10px;
-    margin-top: 10%; 
-  }
+#login form > .submit {
+  width: 100px;
+  height: 25px;
+  text-align: center;
+  font-family: 'Mukta';
+  font-size: 15px;
+  padding-bottom: 25px;
+  cursor: pointer;
+}
 
-  .harvest-crop {
-    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-  }
 
-  .delete-crop {
-    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-  }
+#background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  width: auto;
+  height: 100%;;
+  z-index: -1;
+}
 
-  .switch-season {
-    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-  }
+#spring-bg {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+}
 
+/* Season Page____________________________________________ */
+
+/* .season-container {
+  text-align: center;
+  color: black;
+
+  max-width: 30%;
+  border-radius: 10px;
+  background: white;
+
+  line-height: 100px;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 10%;
+} */
+
+.question {
+  text-align: center;
+  color: black;
+  margin-top: 10%;
+}
+
+.select-crops {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+    rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.season-card.selected {
+  color: coral;
+}
+
+/* Garden Page____________________________________________ */
+
+.container {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* max-width: 30%; */
+  width: auto;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+
+  padding: 100px;
+  margin: 25px;
+  float: none;
+}
+
+#garden-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#garden-plot {
+  width: 750px;
+  height: 650px;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  margin: 25px;
+  background-image: url(https://www.tynker.com/minecraft/api/block?id=5aac17d976f29321238b45a3&w=400&h=400&width=400&height=400&mode=contain&format=jpg&quality=75&cache=max&v=1521227761);
+}
