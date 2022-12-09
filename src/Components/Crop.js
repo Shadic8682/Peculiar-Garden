@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Crop({ id, cropName, season, description, growth_time, plantedCropIDs, setPlantedCropIDs }) {
+function Crop({ id, cropName, season, description, growth_time, plantedCropIDs, setPlantedCropIDs, img_url }) {
   const [isSelected, setSelected] = useState(false)
   function clickHandler() {
     console.log('clicked')
@@ -20,7 +20,7 @@ function Crop({ id, cropName, season, description, growth_time, plantedCropIDs, 
       <p>{description}</p>
       <h4>Time to Grow: {growth_time} Weeks</h4>
       <img
-        src="https://previews.123rf.com/images/dreamcreation01/dreamcreation011609/dreamcreation01160900211/63269274-vector-illustration-of-cartoon-vegetable-garden-farm-background.jpg"
+        src={img_url}
         alt="some_name" className="image-size"
       />
     </div>

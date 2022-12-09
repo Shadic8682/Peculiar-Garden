@@ -23,13 +23,14 @@ body {
 
 
 /* Crops Cards---------------------------------------------------------- */
-#crops-screen, #login-screen, #garden-screen {
+#crops-screen, #login-screen, #garden-screen, #seasons-screen {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .crop-container {
@@ -195,6 +196,7 @@ body {
   margin-top: 10%;
 } */
 
+
 .question {
   text-align: center;
   color: black;
@@ -209,8 +211,24 @@ body {
   transform: scale(1.05) rotate(-1deg);
 }
 
+.season-card {
+  user-select: none;
+  cursor: pointer;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1) inset; 
+	-webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1) inset; 
+	-moz-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1) inset; 
+  font-family: 'Mukta';
+  transition: all .25s;
+  width: 250px;
+  height: auto;
+  border-radius: 5px;
+  border: none;
+  margin: 15px;
+}
+
 .season-card.selected {
-  color: coral;
+  background: aquamarine;
+  color: white;
 }
 
 /* Garden Page____________________________________________ */
@@ -221,6 +239,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Mukta';
 
   /* max-width: 30%; */
   width: auto;
