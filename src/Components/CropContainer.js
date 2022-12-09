@@ -20,15 +20,17 @@ const CropContainer = ({ currentGarden }) => {
   }
 
   function assignCrops() {
-    console.log(plantedCropIDs)
-    navigate('/garden')
-    plantedCropIDs.map((cropID) => {
-      fetch(`http://localhost:9292/crops/${cropID}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ garden_id: currentGarden.id }),
-      });
-    })
+    setTimeout(() => {
+      console.log(plantedCropIDs)
+      navigate('/garden')
+      plantedCropIDs.map((cropID) => {
+        fetch(`http://localhost:9292/crops/${cropID}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ garden_id: currentGarden.id }),
+        });
+      })
+    }, 100);
   }
 
 
@@ -42,6 +44,7 @@ const CropContainer = ({ currentGarden }) => {
         growth_time={eachCrop.growth_time}
         plantedCropIDs={plantedCropIDs}
         setPlantedCropIDs={setPlantedCropIDs}
+        img_url={eachCrop.img_url}
       />
     );
   });
